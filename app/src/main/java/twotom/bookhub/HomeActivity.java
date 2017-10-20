@@ -47,7 +47,9 @@ public class HomeActivity extends AppCompatActivity {
         (findViewById(R.id.button_home_profile)).setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 // Start WishlistActivity.class
-                Intent myIntent = new Intent(HomeActivity.this, ProfileActivity.class);
+                UserManager um = new UserManager();
+                Intent myIntent = new Intent(HomeActivity.this, ViewProfileActivity.class);
+                myIntent.putExtra("seller", um.getCurrentUser());
                 startActivity(myIntent);
             }
         });
