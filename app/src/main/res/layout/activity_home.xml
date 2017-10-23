@@ -24,7 +24,7 @@
         app:layout_constraintLeft_toLeftOf="parent"/>
 
     <ImageButton
-        android:id="@+id/button_home_find_books"
+        android:id="@+id/button_home_findBooks"
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:layout_marginBottom="16dp"
@@ -34,35 +34,37 @@
         android:minHeight="72dp"
         android:minWidth="72dp"
         android:nestedScrollingEnabled="false"
+        android:onClick="onFindBooks"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/linearLayout_home_wishList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout_home_profile"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/linearLayout5"
+        app:layout_constraintRight_toLeftOf="@+id/linearLayout_home_myBooks"
         app:layout_constraintLeft_toLeftOf="parent">
 
         <ImageButton
-            android:id="@+id/button_home_wishlist"
+            android:id="@+id/button_home_wishList"
             android:layout_width="85dp"
             android:layout_height="85dp"
             android:background="@drawable/ic_wishlist"
             android:minHeight="72dp"
             android:minWidth="72dp"
             android:nestedScrollingEnabled="false"
+            android:onClick="onWishList"
             tools:layout_editor_absoluteX="65dp"
             tools:layout_editor_absoluteY="65dp"/>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView_home_wishList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wishlist"
+            android:text="Wish List"
             android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="18sp"
@@ -71,27 +73,28 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout5"
+        android:id="@+id/linearLayout_home_myBooks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout_home_wishList"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/linearLayout3">
+        app:layout_constraintLeft_toRightOf="@+id/linearLayout_home_wishList">
 
         <ImageButton
-            android:id="@+id/button_home_my_books"
+            android:id="@+id/button_home_myBooks"
             android:layout_width="85dp"
             android:layout_height="85dp"
             android:background="@drawable/ic_mybook"
             android:minHeight="72dp"
             android:minWidth="72dp"
             android:nestedScrollingEnabled="false"
+            android:onClick="onMyBooks"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="-20dp"/>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView_home_myBooks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="My Books"
@@ -104,14 +107,14 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/linearLayout_home_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintRight_toRightOf="@+id/linearLayout3"
-        app:layout_constraintLeft_toLeftOf="@+id/linearLayout3"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+        app:layout_constraintRight_toRightOf="@+id/linearLayout_home_wishList"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout_home_wishList"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout_home_transactions"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_home_wishList">
 
         <ImageButton
             android:id="@+id/button_home_profile"
@@ -121,11 +124,12 @@
             android:minHeight="72dp"
             android:minWidth="72dp"
             android:nestedScrollingEnabled="false"
+            android:onClick="onProfile"
             tools:layout_editor_absoluteX="63dp"
             tools:layout_editor_absoluteY="192dp"/>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView_home_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Profile"
@@ -138,13 +142,13 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
+        android:id="@+id/linearLayout_home_chats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
-        app:layout_constraintRight_toRightOf="@+id/linearLayout5"
-        app:layout_constraintLeft_toLeftOf="@+id/linearLayout5">
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout_home_myBooks"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout_home_myBooks"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout_home_profile">
 
         <ImageButton
             android:id="@+id/button_home_chats"
@@ -158,7 +162,7 @@
             tools:layout_editor_absoluteY="192dp"/>
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textView_home_chats"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Chats"
@@ -171,15 +175,15 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout6"
+        android:id="@+id/linearLayout_home_transactions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        app:layout_constraintRight_toRightOf="@+id/linearLayout2"
-        app:layout_constraintLeft_toLeftOf="@+id/linearLayout2"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout_home_profile"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout_home_profile"
         app:layout_constraintBottom_toTopOf="@+id/button_home_logout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_home_profile">
 
         <ImageButton
             android:id="@+id/button_home_transactions"
@@ -194,7 +198,7 @@
             tools:layout_editor_absoluteY="192dp"/>
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textView_home_transactions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Transactions"
